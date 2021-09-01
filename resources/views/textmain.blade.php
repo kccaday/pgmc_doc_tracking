@@ -24,6 +24,7 @@
               <th>AFP Serial Num</th>
               <th>Contact No</th>
               <th>Concatenated Text</th>
+              <th>Date Texted</th>
           </tr>
         </thead>
         @foreach($textListMain as $texts)
@@ -32,6 +33,7 @@
               <td>{{ $texts->afpsn }}</td>
               <td>{{ $texts->contact_no }}</td>
               <td>{{ $texts->concatenated }}</td>
+              <td>{{ $texts->created_at }}</td>
           </tr>
         </tbody>
         @endforeach

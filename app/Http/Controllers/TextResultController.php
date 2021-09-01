@@ -17,8 +17,15 @@ class TextResultController extends Controller
     }
 
     public function indexMain(){
-        $textListMain = DB::table('pgmc_text_main_tbl')->whereNotNull('contact_no')->whereDate('created_at', Carbon::today())->get();
-         return view('textmain', compact('textListMain'));
+        $textListMain = DB::table('pgmc_text_main_tbl')->whereNotNull('contact_no')->whereDate('created_at', '=', Carbon::today())->get();
+         
+
+                $textListMain->map(function ($item, $key) {
+                    $item->created_at = (Carbon::parse($item->created_at))->toDateString();
+                     return $item;
+                });
+       // dd($textListMain);
+            return view('textmain', compact('textListMain')); 
     }
 
     public function update(Request $request){

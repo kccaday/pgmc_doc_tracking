@@ -29,6 +29,7 @@
               <th>AFP Serial Num</th>
               <th>Contact No</th>
               <th>Concatenated Text</th>
+              <th>Date Texted</th>
           </tr>
         </thead>
         <?php $__currentLoopData = $textListMain; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $texts): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -37,6 +38,7 @@
               <td><?php echo e($texts->afpsn); ?></td>
               <td><?php echo e($texts->contact_no); ?></td>
               <td><?php echo e($texts->concatenated); ?></td>
+              <td><?php echo e($texts->created_at); ?></td>
           </tr>
         </tbody>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

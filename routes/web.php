@@ -13,6 +13,7 @@ Route::view('/search', 'search');
 Route::view('/result', 'result');
 Route::view('/menu', 'menu');
 Route::view('/textsearch', 'textsearch');
+Route::view('/selection', 'selection');
 
 //Route::view('/textresult', 'textresult');
 //Route::get('/textresult', [TextResultController::class, 'index']);

@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\TextResultController;
+use App\Http\Controllers\MainController;
 
 use Illuminate\Support\Facades\Route;
+
 
 Route::view('/', 'welcome');
 Route::view('/clients', 'clients');
@@ -31,3 +33,21 @@ Route::view('/edit', 'edit');
 Route::view('/existing', 'textmain');
 Route::get('/existing', [TextResultController::class, 'index']);
 
+Route::get('/auth/login', [MainController::class, 'login'])->name('auth.login');
+Route::get('/auth/register', [MainController::class, 'register'])->name('auth.register');
+Route::post('/auth/save', [MainController::class, 'save'])->name('auth.save');
+Route::post('/auth/check',[MainController::class, 'check'])->name('auth.check');
+Route::get('/auth/logout',[MainController::class, 'logout'])->name('auth.logout');
+Route::post('/admin/add', [MainController::class, 'add'])->name('admin.add');
+
+
+Route::group(['middleware'=>['AuthCheck']], function(){
+    Route::get('/admin/search',[MainController::class, 'search'])->name('admin.search');
+    Route::get('/auth/login', [MainController::class, 'login'])->name('auth.login');
+    Route::get('/auth/register', [MainController::class, 'register'])->name('auth.register');
+    Route::get('/admin/new', [MainController::class, 'new'])->name('admin.new');
+    Route::get('/admin/update', [MainController::class, 'updatepage'])->name('admin.update');
+    Route::post('/admin/updatedtls'  ,[MainController::class, 'update'])->name('admin.updatedtls');
+    Route::get('/admin/details'  ,[MainController::class, 'details'])->name('admin.details');
+
+});

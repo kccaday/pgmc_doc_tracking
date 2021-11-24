@@ -19,8 +19,8 @@
   </nav>
 
   <table>
-    {!! Form::open(['method' => 'PUT', 'route' => ['text.update']]) !!}
 
+  {!! Form::open(['method' => 'PUT', 'route' => ['text.update']]) !!}
         <thead>
           <tr>
               <th>Tracking Number</th>

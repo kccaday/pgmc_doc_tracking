@@ -46,12 +46,38 @@
           <br>
           <select class="browser-default" placeholder="Transactions" id="transaction_type" name="transaction_type" class="validate" value="{{ old('transaction_type') }}" required>
                 <option value="" disabled selected>Transactions</option>
-                <option value="Resumption of Pension">Resumption of Pension</option>
-                <option value="Transfer of Pension">Transfer of Pension</option>
-                <option value="Restoration of Pension">Restoration of Pension</option>
+                <option value="Allotment">Allotment</option>
                 <option value="Changes in Monthly Pension">Changes in Monthly Pension</option>
-                <option value="Posthumous Pension">Posthumous Pension</option>
                 <option value="Deletion">Deletion</option>
+                <option value="Direct Pension">Direct Pension</option>
+                <option value="DV">DV - 36-months Lumpsum</option>
+                <option value="DV">DV - Closed/Invalid Accounts</option>
+                <option value="DV">DV - Commutation of TAS</option>
+                <option value="DV">DV - Direct Pension</option>
+                <option value="DV">DV - Incorporation</option>
+                <option value="DV">DV - Living Claims</option>
+                <option value="DV">DV - Local Pickup</option>
+                <option value="DV">DV - One time payment (Monies)</option>
+                <option value="DV">DV - Overpaid/Underpaid</option>
+                <option value="DV">DV - Own Rights</option>
+                <option value="DV">DV - Restoration</option>
+                <option value="DV">DV - Resumption of Pension</option>
+                <option value="DV">DV - Separation Gratuity/Resignation</option>
+                <option value="DV">DV - Transfer of Pension</option>
+                <option value="DV">DV - Unpaid Monthly Pension (Posthumus)/option>
+                <option value="Incorporation">Incorporation</option>
+                <option value="Issuance">Issuance of Order for Officers</option>
+                <option value="Incorporation">Letter of Refund - NQB/TOP</option>
+                <option value="Lumpsum Diff">Lumpsum Differential</option>
+                <option value="Monies Diff">Monies Differential</option>
+                <option value="Prior">Prior Years Claims</option>
+                <option value="Pension Diff">Pension Differential</option>
+                <option value="Posthumous Pension">Posthumous Pension</option>
+                <option value="Restoration of Pension">Restoration of Pension</option>
+                <option value="Resumption of Pension">Resumption of Pension</option>
+                <option value="RSAB">RSAB</option>
+                <option value="Supplementary">Supplementary Claims</option>
+                <option value="Transfer of Pension">Transfer of Pension</option>
             </select>
         </div>
       </div>
@@ -134,6 +160,25 @@
                 <option value="CIU">CIU</option>
                 <option value="LSO">LSO</option>
                 <option value="PAU">PAU</option>
+                <option value="Baguio">RSU-Baguio</option>
+                <option value="Batangas">RSU-Batangas</option>
+                <option value="Bicol">RSU-Bicol</option>
+                <option value="Butuan">RSU-Butuan</option>
+                <option value="Catbalogan">RSU-Catbalogan</option>
+                <option value="Cavite">RSU-Cavite</option>
+                <option value="CDO">RSU-CDO</option>
+                <option value="Cebu">RSU-Cebu</option>
+                <option value="Cotabato">RSU-Cotabato</option>
+                <option value="Davao">RSU-Davao</option>
+                <option value="Iloilo">RSU-Iloilo</option>
+                <option value="Isabela">RSU-Isabela</option>
+                <option value="Lucena">RSU-Lucena</option>
+                <option value="Manaoag">RSU-Manaoag</option>
+                <option value="NuevaEcija">RSU-Nueva Ecija</option>
+                <option value="Pagadian">RSU-Pagadian</option>
+                <option value="Palawan">RSU-Palawan</option>
+                <option value="Tarlac">RSU-Tarlac</option>
+                <option value="Zamboanga">RSU-Zamboanga</option>
             </select>
           <span class="text-danger" style="color:red">@error('unit_to_receive'){{ $message }} @enderror</span>
         </div>

@@ -7,6 +7,7 @@ use App\Models\Admin;
 use App\Models\Add;
 use App\Models\Update;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 
 use Illuminate\Support\Facades\DB;
 use App\Models\Text;
@@ -137,8 +138,17 @@ class MainController extends Controller
             'unit'=>$request->input('unit')
         ]);
 
-        if($query){
+        $busybee = new \GuzzleHttp\Client();
+        $busybee->request('GET', 'http://34.80.159.37/app/smsapi/index.php', ['query' =>[
+                                        'key' => '61822fa4bded9',
+                                        'type' => 'text',
+                                        'contacts' => $request->input('contact_no'),
+                                        'senderid' => 'BUSYBEE',
+                                        'msg' => 'Your application is received. Please wait for further notice']
+                                    ]);
 
+        if($query){
+            
             return back()->with('success', 'Data have been successfully created');
         }else{
             return back()->with('fail', 'Something went wrong');

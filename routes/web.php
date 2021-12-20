@@ -46,8 +46,9 @@ Route::group(['middleware'=>['AuthCheck']], function(){
     Route::get('/auth/login', [MainController::class, 'login'])->name('auth.login');
     Route::get('/auth/register', [MainController::class, 'register'])->name('auth.register');
     Route::get('/admin/new', [MainController::class, 'new'])->name('admin.new');
-    Route::get('/admin/update', [MainController::class, 'updatepage'])->name('admin.update');
+    Route::get('/admin/dashboard/update', [MainController::class, 'updatepage'])->name('admin.update');
     Route::post('/admin/updatedtls'  ,[MainController::class, 'update'])->name('admin.updatedtls');
     Route::get('/admin/details'  ,[MainController::class, 'details'])->name('admin.details');
-
+    Route::get('/admin/dashboard'  ,[MainController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/admin/dashboard/edit/{id}', [MainController::class, 'edit'])->name('admin.edit');
 });

@@ -78,6 +78,7 @@
                 <option value="CIU">CIU</option>
                 <option value="LSO">LSO</option>
                 <option value="PAU">PAU</option>
+                <option value="BAGUIO">RSU-BAGUIO</option>
             </select>
           </td>
             <td><input placeholder="Remarks" id="remarks" name="remarks" class="validate" value="<?php echo e($result->remarks); ?>" required></td>

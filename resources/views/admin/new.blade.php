@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Result</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    
 </head>
 <body>
-
 <nav class=”blue”>
     <div class="nav-wrapper" >
     <a href="#" class="brand-logo">PGMC Document Tracking</a>
@@ -64,7 +62,7 @@
                 <option value="DV">DV - Resumption of Pension</option>
                 <option value="DV">DV - Separation Gratuity/Resignation</option>
                 <option value="DV">DV - Transfer of Pension</option>
-                <option value="DV">DV - Unpaid Monthly Pension (Posthumus)/option>
+                <option value="DV">DV - Unpaid Monthly Pension (Posthumus)</option>
                 <option value="Incorporation">Incorporation</option>
                 <option value="Issuance">Issuance of Order for Officers</option>
                 <option value="Incorporation">Letter of Refund - NQB/TOP</option>
@@ -172,6 +170,7 @@
                 <option value="Davao">RSU-Davao</option>
                 <option value="Iloilo">RSU-Iloilo</option>
                 <option value="Isabela">RSU-Isabela</option>
+                <option value="Lipa">RSU-Lipa</option>
                 <option value="Lucena">RSU-Lucena</option>
                 <option value="Manaoag">RSU-Manaoag</option>
                 <option value="NuevaEcija">RSU-Nueva Ecija</option>
@@ -210,7 +209,6 @@
   });
 
   // Or with jQuery
-
   $(document).ready(function(){
     $('.datepicker').datepicker();
   });

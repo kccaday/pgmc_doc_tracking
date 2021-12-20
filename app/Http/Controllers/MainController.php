@@ -143,8 +143,8 @@ class MainController extends Controller
                                         'key' => '61822fa4bded9',
                                         'type' => 'text',
                                         'contacts' => $request->input('contact_no'),
-                                        'senderid' => 'BUSYBEE',
-                                        'msg' => 'Your application is received. Please wait for further notice']
+                                        'senderid' => 'AFPPGMC',
+                                        'msg' => \sprintf('Your application for %s is received. Please wait for further notice', $request->input('transaction_type'))]
                                     ]);
 
         if($query){
@@ -161,12 +161,16 @@ class MainController extends Controller
         $result = DB::table('pgmc_main_tbl')->where('afpsn',$id)->first();
         
         $data = ['LoggedUserInfo'=>Admin::where('id','=',session('LoggedUser'))->first()];
-        //dd($result);
+        dd($result);
  
-        return view('admin.update',$data)->with('result', $result);
+        //return view('admin.update',$data)->with('result', $result);
     }
 
     function update(Request $request){
+        $id = $request->afpsn;
+        $first_name = $request->first_name;
+        $result = DB::table('pgmc_main_tbl')->where('afpsn',$id)->first();
+
         $query = DB::table('pgmc_details_tbl')->insert([
             'afpsn'=>$request->input('afpsn'),
             'transaction_type'=>$request->input('transaction_type'),
@@ -186,9 +190,10 @@ class MainController extends Controller
             'last_updated_by'=>$request->input('last_updated_by'),
             'unit'=>$request->input('unit'),
             'updated_at'=>now()
-        ]);
+        ]); 
 
-        $query_update = DB::table('pgmc_main_tbl')->update([
+        $query_update = DB::table('pgmc_main_tbl')->where('afpsn', $id)
+                                                  ->update([
             'unit_to_receive'=>$request->input('unit_to_receive'),
             'last_updated_by'=>$request->input('last_updated_by'),
             'remarks'=>$request->input('remarks'),
@@ -204,10 +209,27 @@ class MainController extends Controller
         }
         //return $request->input();
     }
-    function details(Request $request){
+function details(Request $request){
         $id = $request->afpsn;
         $details = DB::table('pgmc_details_tbl')->where('afpsn',$id)->get();
        // dd($textListMain);
         return view('admin.details')->with('details', $details);
     }
+
+    function dashboard(Request $request){
+        $data = Admin::where('id','=',session('LoggedUser'))->first();
+           //dd($data);
+        $details = DB::table('pgmc_main_tbl')->where('unit_to_receive',$data->unit)->get();
+           //dd($details);
+        return view('admin.dashboard')->with('dashboard', $details);
+    }
+    function edit($afpsn) {
+        $result = DB::table('pgmc_main_tbl')->where('afpsn',$afpsn)->first();
+        $data = ['LoggedUserInfo'=>Admin::where('id','=',session('LoggedUser'))->first()];
+        
+        //dd($result);
+ 
+        return view('admin.update',$data)->with('result', $result);
+        //return View::make('admin.edit')>with('data', $data);
+        }
 }

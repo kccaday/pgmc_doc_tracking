@@ -32,7 +32,7 @@
               <th>Transaction Type</th>
               <th>Date Updated</th>
               <th>Document Owner</th>
-              <th>Last Updated By</th>w
+              <th>Last Updated By</th>
               <th>Last Updated By Unit</th>
               <th>Remarks</th>
           </tr>

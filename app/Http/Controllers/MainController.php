@@ -211,7 +211,8 @@ class MainController extends Controller
     }
 function details(Request $request){
         $id = $request->afpsn;
-        $details = DB::table('pgmc_details_tbl')->where('afpsn',$id)->get();
+        $details = DB::table('pgmc_details_tbl')->where('afpsn',$id)
+                                                ->orderBy('updated_at','desc')->get();
        // dd($textListMain);
         return view('admin.details')->with('details', $details);
     }

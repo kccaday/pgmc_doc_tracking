@@ -139,12 +139,12 @@ class MainController extends Controller
         ]);
 
         $busybee = new \GuzzleHttp\Client();
-        $busybee->request('GET', 'http://34.80.159.37/app/smsapi/index.php', ['query' =>[
-                                        'key' => '61822fa4bded9',
-                                        'type' => 'text',
-                                        'contacts' => $request->input('contact_no'),
+        $busybee->request('GET', 'https://app.brandtxt.io/api/v2/SendSMS?ApiKey={ApiKey}&ClientId={ClientId}&SenderId={SenderId}&Message={Message}&MobileNumbers={MobileNumbers}&Is_Unicode={Is_Unicode}&Is_Flash={Is_Flash}', ['query' =>[  
+                                        'ApiKey' => 'N6lpD9e1eWeNZYtZGxy+e+kL/YTRDpU2ka7yONgpahI=',
+                                        'ClientId' => 'a1e56cbe-2d3a-4ddb-bc28-87da89735d7e', 
                                         'senderid' => 'AFPPGMC',
-                                        'msg' => \sprintf('Your application for %s is received. Please wait for further notice', $request->input('transaction_type'))]
+                                        'MobileNumbers' => $request->input('contact_no'),
+                                        'Message' => \sprintf('Your application for %s is received. Please wait for further notice', $request->input('transaction_type'))]
                                     ]);
 
         if($query){

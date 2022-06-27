@@ -158,6 +158,8 @@
                 <option value="CIU">CIU</option>
                 <option value="LSO">LSO</option>
                 <option value="PAU">PAU</option>
+                <option value="PAU">PG3</option>
+                <option value="BAGUIO">PPBU</option>
                 <option value="Baguio">RSU-Baguio</option>
                 <option value="Batangas">RSU-Batangas</option>
                 <option value="Bicol">RSU-Bicol</option>

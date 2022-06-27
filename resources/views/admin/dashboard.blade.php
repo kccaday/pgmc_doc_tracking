@@ -33,7 +33,7 @@
           </tr>
         </thead>
         {!! Form::open(['method' => 'GET', 'route' => ['admin.update']]) !!}
-        @foreach($dashboard as $dash) 
+        @foreach($dashboard as $dash)     
         <tbody>
           <tr>
           <td id="afpsn">{{ $dash->afpsn }}</td>

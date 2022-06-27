@@ -14,6 +14,7 @@
 </head>
 <body>
 
+
 <nav class=”blue”>
     <div class="nav-wrapper" >
     <a href="<?php echo e(route('admin.search')); ?>" class="brand-logo">PGMC Document Tracking</a>
@@ -22,7 +23,6 @@
       </ul>
     </div>
   </nav>
-  <form action="" method="get">
   <table>
         <thead>
           <tr>
@@ -37,6 +37,8 @@
               <th>Remarks</th>
           </tr>
         </thead>
+        <form action="<?php echo e(route('admin.textUser')); ?>" method="post">
+  <?php echo csrf_field(); ?>
         <?php $__currentLoopData = $details; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dtl): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
         <tbody>
           <tr>
@@ -54,6 +56,7 @@
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
       </table>
 </form>
+<button class="btn btn-block btn-primary" type="submit" name="action"><a href="<?php echo e(url('admin/success')); ?>" >Text User</button>
 
 </body>
 </html>

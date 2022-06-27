@@ -58,7 +58,7 @@
           <input id="folder_no" name="folder_no" type="hidden" value="{{$result->folder_no}}">
           <input id="compliance" name="compliance" type="hidden" value="{{$result->compliance}}">
             <td>{{ $result->afpsn }}</td>
-            <td>{{ $result->first_name }}</td>
+            <td>{{ $result->first_name }}</td>  
             <td>{{ $result->last_name }}</td>
             <td>{{ $result->transaction_type }}</td>
             <td>{{ $result->date }}</td>

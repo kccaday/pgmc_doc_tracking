@@ -9,6 +9,7 @@
 </head>
 <body>
 
+
 <nav class=”blue”>
     <div class="nav-wrapper" >
     <a href="{{ route('admin.search') }}" class="brand-logo">PGMC Document Tracking</a>
@@ -17,7 +18,6 @@
       </ul>
     </div>
   </nav>
-  <form action="" method="get">
   <table>
         <thead>
           <tr>
@@ -32,6 +32,8 @@
               <th>Remarks</th>
           </tr>
         </thead>
+        <form action="{{ route('admin.textUser') }}" method="post">
+  @csrf
         @foreach($details as $dtl) 
         <tbody>
           <tr>
@@ -49,6 +51,7 @@
         @endforeach
       </table>
 </form>
+<button class="btn btn-block btn-primary" type="submit" name="action"><a href="{{ url('admin/success') }}" >Text User</button>
 
 </body>
 </html>

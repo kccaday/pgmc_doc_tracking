@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\TextResultController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\TextUserController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -50,5 +51,8 @@ Route::group(['middleware'=>['AuthCheck']], function(){
     Route::post('/admin/updatedtls'  ,[MainController::class, 'update'])->name('admin.updatedtls');
     Route::get('/admin/details'  ,[MainController::class, 'details'])->name('admin.details');
     Route::get('/admin/dashboard'  ,[MainController::class, 'dashboard'])->name('admin.dashboard');
+    
+    Route::post('/admin/details/textuser', [TextUserController::class, 'textUser'])->name('admin.textUser');
     Route::get('/admin/dashboard/edit/{id}', [MainController::class, 'edit'])->name('admin.edit');
+    Route::view('/admin/success', 'success');
 });

@@ -115,7 +115,8 @@ class MainController extends Controller
             'remarks'=>$request->input('remarks'),
             'created_by'=>$request->input('created_by'),
             'last_updated_by'=>$request->input('created_by'),
-            'unit'=>$request->input('unit')
+            'unit'=>$request->input('unit'),
+            'created_at'=>now()
         ]);
 
         $queryDtl = DB::table('pgmc_details_tbl')->insert([
@@ -135,12 +136,13 @@ class MainController extends Controller
             'remarks'=>$request->input('remarks'),
             'created_by'=>$request->input('created_by'),
             'last_updated_by'=>$request->input('created_by'),
-            'unit'=>$request->input('unit')
+            'unit'=>$request->input('unit'),
+            'created_at'=>now()
         ]);
 
         $busybee = new \GuzzleHttp\Client();
         $busybee->request('GET', 'https://app.brandtxt.io/api/v2/SendSMS?ApiKey={ApiKey}&ClientId={ClientId}&SenderId={SenderId}&Message={Message}&MobileNumbers={MobileNumbers}&Is_Unicode={Is_Unicode}&Is_Flash={Is_Flash}', ['query' =>[  
-                                        'ApiKey' => 'N6lpD9e1eWeNZYtZGxy+e+kL/YTRDpU2ka7yONgpahI=',
+                                       // 'ApiKey' => 'N6lpD9e1eWeNZYtZGxy+e+kL/YTRDpU2ka7yONgpahI=',
                                         'ClientId' => 'a1e56cbe-2d3a-4ddb-bc28-87da89735d7e', 
                                         'senderid' => 'AFPPGMC',
                                         'MobileNumbers' => $request->input('contact_no'),
@@ -189,7 +191,8 @@ class MainController extends Controller
             'created_by'=>$request->input('last_updated_by'),
             'last_updated_by'=>$request->input('last_updated_by'),
             'unit'=>$request->input('unit'),
-            'updated_at'=>now()
+            'updated_at'=>now(),
+            'created_at'=>now()
         ]); 
 
         $query_update = DB::table('pgmc_main_tbl')->where('afpsn', $id)
@@ -212,7 +215,8 @@ class MainController extends Controller
     function details(Request $request){
         $id = $request->afpsn;
         $details = DB::table('pgmc_details_tbl')->where('afpsn',$id)
-                                                ->orderBy('updated_at','desc')->get();  
+                                                ->orderBy('updated_at','desc')->get();
+        //dd($details);
         
         return view('admin.details')->with('details', $details);
     }

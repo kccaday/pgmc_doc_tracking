@@ -25,6 +25,7 @@
               <th>First Name</th>
               <th>Last Name</th>
               <th>Transaction Type</th>
+              <th>Date Created</th>
               <th>Date Updated</th>
               <th>Document Owner</th>
               <th>Last Updated By</th>
@@ -41,6 +42,7 @@
           <td>{{ $dtl->first_name }}</td>
           <td>{{ $dtl->last_name }}</td>
           <td>{{ $dtl->transaction_type }}</td>
+          <td>{{ $dtl->created_at }}</td>
           <td>{{ $dtl->updated_at }}</td>
           <td>{{ $dtl->unit_to_receive }}</td>
           <td>{{ $dtl->created_by }}</td>
@@ -51,7 +53,7 @@
         @endforeach
       </table>
 </form>
-<button class="btn btn-block btn-primary" type="submit" name="action"><a href="{{ url('admin/success') }}" >Text User</button>
+<!--<button class="btn btn-block btn-primary" type="submit" name="action"><a href="{{ url('admin/success') }}" >Text User</button> -->
 
 </body>
 </html>

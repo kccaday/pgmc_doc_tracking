@@ -39,7 +39,7 @@
         </thead>
         <?php echo Form::open(['method' => 'GET', 'route' => ['admin.update']]); ?>
 
-        <?php $__currentLoopData = $dashboard; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dash): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+        <?php $__currentLoopData = $dashboard; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dash): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>     
         <tbody>
           <tr>
           <td id="afpsn"><?php echo e($dash->afpsn); ?></td>

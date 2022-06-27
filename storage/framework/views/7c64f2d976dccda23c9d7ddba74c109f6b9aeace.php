@@ -65,7 +65,7 @@
           <input id="folder_no" name="folder_no" type="hidden" value="<?php echo e($result->folder_no); ?>">
           <input id="compliance" name="compliance" type="hidden" value="<?php echo e($result->compliance); ?>">
             <td><?php echo e($result->afpsn); ?></td>
-            <td><?php echo e($result->first_name); ?></td>
+            <td><?php echo e($result->first_name); ?></td>  
             <td><?php echo e($result->last_name); ?></td>
             <td><?php echo e($result->transaction_type); ?></td>
             <td><?php echo e($result->date); ?></td>

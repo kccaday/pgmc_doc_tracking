@@ -29,8 +29,7 @@
                 <?php endif; ?>
                 <?php if(Session::get('fail')): ?>
                     <div class="alert alert-danger">
-                        <?php echo e(Session::get('fail')); ?>
-
+                        <?php echo e(Session::get('fail')); ?>  
                     </div>
                 <?php endif; ?>
                 <?php echo csrf_field(); ?>

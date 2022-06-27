@@ -16,7 +16,7 @@
 
 
 <nav class=”blue”>
-    <div class="nav-wrapper" >
+    <div class="nav" >
     <a href="<?php echo e(route('admin.search')); ?>" class="brand-logo">PGMC Document Tracking</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="<?php echo e(route('admin.search')); ?>">Back</a></li>
@@ -30,6 +30,7 @@
               <th>First Name</th>
               <th>Last Name</th>
               <th>Transaction Type</th>
+              <th>Date Created</th>
               <th>Date Updated</th>
               <th>Document Owner</th>
               <th>Last Updated By</th>
@@ -46,6 +47,7 @@
           <td><?php echo e($dtl->first_name); ?></td>
           <td><?php echo e($dtl->last_name); ?></td>
           <td><?php echo e($dtl->transaction_type); ?></td>
+          <td><?php echo e($dtl->created_at); ?></td>
           <td><?php echo e($dtl->updated_at); ?></td>
           <td><?php echo e($dtl->unit_to_receive); ?></td>
           <td><?php echo e($dtl->created_by); ?></td>
@@ -56,7 +58,7 @@
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
       </table>
 </form>
-<button class="btn btn-block btn-primary" type="submit" name="action"><a href="<?php echo e(url('admin/success')); ?>" >Text User</button>
+<!--<button class="btn btn-block btn-primary" type="submit" name="action"><a href="<?php echo e(url('admin/success')); ?>" >Text User</button> -->
 
 </body>
 </html>

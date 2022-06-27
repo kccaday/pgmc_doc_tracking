@@ -142,7 +142,7 @@ class MainController extends Controller
 
         $busybee = new \GuzzleHttp\Client();
         $busybee->request('GET', 'https://app.brandtxt.io/api/v2/SendSMS?ApiKey={ApiKey}&ClientId={ClientId}&SenderId={SenderId}&Message={Message}&MobileNumbers={MobileNumbers}&Is_Unicode={Is_Unicode}&Is_Flash={Is_Flash}', ['query' =>[  
-                                       // 'ApiKey' => 'N6lpD9e1eWeNZYtZGxy+e+kL/YTRDpU2ka7yONgpahI=',
+                                        'ApiKey' => 'N6lpD9e1eWeNZYtZGxy+e+kL/YTRDpU2ka7yONgpahI=',
                                         'ClientId' => 'a1e56cbe-2d3a-4ddb-bc28-87da89735d7e', 
                                         'senderid' => 'AFPPGMC',
                                         'MobileNumbers' => $request->input('contact_no'),

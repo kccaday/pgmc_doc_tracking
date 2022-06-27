@@ -71,8 +71,8 @@
                 <option value="CIU">CIU</option>
                 <option value="LSO">LSO</option>
                 <option value="PAU">PAU</option>
-                <option value="PAU">PG3</option>
-                <option value="BAGUIO">PPBU</option>
+                <option value="PG3">PG3</option>
+                <option value="PPBU">PPBU</option>
             </select>
           </td>
             <td><input placeholder="Remarks" id="remarks" name="remarks" class="validate" value="{{$result->remarks}}" required></td>

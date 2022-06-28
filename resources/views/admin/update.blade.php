@@ -73,6 +73,7 @@
                 <option value="PAU">PAU</option>
                 <option value="PG3">PG3</option>
                 <option value="PPBU">PPBU</option>
+                <option value="TFD">Task Force Differential</option>
             </select>
           </td>
             <td><input placeholder="Remarks" id="remarks" name="remarks" class="validate" value="{{$result->remarks}}" required></td>

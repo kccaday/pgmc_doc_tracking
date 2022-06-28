@@ -180,6 +180,7 @@
                 <option value="Palawan">RSU-Palawan</option>
                 <option value="Tarlac">RSU-Tarlac</option>
                 <option value="Zamboanga">RSU-Zamboanga</option>
+                <option value="TFD">Task Force Differential</option>
             </select>
           <span class="text-danger" style="color:red">@error('unit_to_receive'){{ $message }} @enderror</span>
         </div>

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 use DB;
 
@@ -15,58 +16,180 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('pgmc_text_main_tbl')->insert([
-            'afpsn' => '8383',
-            'last_name' => 'MACARAEG',
-            'first_name' => 'ENRIQUE',
-            'middle_name' => 'G',
-            'pension_rank' => 'MAJ',
-            'status' => '1'
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'BAGUIO',
+            'unit' => 'RLU-BAGUIO',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
         ]);
 
-        DB::table('pgmc_text_main_tbl')->insert([
-            'afpsn' => '255',
-            'last_name' => 'VICTORIOSO',
-            'first_name' => 'MARCIAL',
-            'middle_name' => 'PATRICIO',
-            'pension_rank' => '1LT',
-            'status' => '1'
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'BICOL',
+            'unit' => 'RLU-BICOL',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
         ]);
 
-        DB::table('pgmc_text_main_tbl')->insert([
-            'afpsn' => '289',
-            'last_name' => 'PANGANORON',
-            'first_name' => 'ARTURO',
-            'middle_name' => 'SABIO',
-            'pension_rank' => '1LT',
-            'status' => '1'
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'BUTUAN',
+            'unit' => 'RLU-BUTUAN',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
         ]);
 
-        DB::table('pgmc_text_main_tbl')->insert([
-            'afpsn' => '328',
-            'last_name' => 'MAGANDA',
-            'first_name' => 'RAYMUNDO',
-            'middle_name' => 'T',
-            'pension_rank' => 'TSG',
-            'status' => '1'
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'CATBALOGAN',
+            'unit' => 'RLU-CATBALOGAN',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
         ]);
 
-        DB::table('pgmc_text_main_tbl')->insert([
-            'afpsn' => '338',
-            'last_name' => 'SALICSIC',
-            'first_name' => 'CONRADO',
-            'middle_name' => 'YERRO',
-            'pension_rank' => '2LT',
-            'status' => '1'
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'CAVITE',
+            'unit' => 'RLU-CAVITE',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
         ]);
 
-        DB::table('pgmc_text_main_tbl')->insert([
-            'afpsn' => '381',
-            'last_name' => 'SEGUN',
-            'first_name' => 'ZOSIMO',
-            'middle_name' => 'PADILLA',
-            'pension_rank' => '2LT',
-            'status' => '1'
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'CDO',
+            'unit' => 'RLU-CDO',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'CEBU',
+            'unit' => 'RLU-CEBU',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'COTABATO',
+            'unit' => 'RLU-COTABATO',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'DAVAO',
+            'unit' => 'RLU-DAVAO',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'ILOILO',
+            'unit' => 'RLU-ILOILO',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'ISABELA',
+            'unit' => 'RLU-ISABELA',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'LIPA',
+            'unit' => 'RLU-LIPA',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'LUCENA',
+            'unit' => 'RLU-LUCENA',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'MANAOAG',
+            'unit' => 'RLU-MANAOAG',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'NCR',
+            'unit' => 'RLU-NCR',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'NUEVAECIJA',
+            'unit' => 'RLU-NUEVAECIJA',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'PAGADIAN',
+            'unit' => 'RLU-PAGADIAN',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'PALAWAN',
+            'unit' => 'PALAWAN',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'TARLAC',
+            'unit' => 'RLU-TARLAC',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'ZAMBOANGA',
+            'unit' => 'RLU-ZAMBOAGA',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'PG3',
+            'unit' => 'PG3',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+        DB::table('pgmc_users_tbl')->insert([
+            'username' => 'PPBU',
+            'unit' => 'PPBU',
+            'password' => Hash::make('12345'),
+            'created_at' => now(),
+            'updated_at' => now()
         ]);
     }
 }

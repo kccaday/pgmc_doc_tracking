@@ -78,7 +78,9 @@
                 <option value="CIU">CIU</option>
                 <option value="LSO">LSO</option>
                 <option value="PAU">PAU</option>
-                <option value="BAGUIO">RSU-BAGUIO</option>
+                <option value="PG3">PG3</option>
+                <option value="PPBU">PPBU</option>
+                <option value="TFD">Task Force Differential</option>
             </select>
           </td>
             <td><input placeholder="Remarks" id="remarks" name="remarks" class="validate" value="<?php echo e($result->remarks); ?>" required></td>

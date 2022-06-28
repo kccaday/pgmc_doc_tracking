@@ -16,7 +16,7 @@
 
 
 <nav class=”blue”>
-    <div class="nav" >
+    <div class="nav-wrapper" >
     <a href="<?php echo e(route('admin.search')); ?>" class="brand-logo">PGMC Document Tracking</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="<?php echo e(route('admin.search')); ?>">Back</a></li>

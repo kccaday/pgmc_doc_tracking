@@ -207,6 +207,8 @@ unset($__errorArgs, $__bag); ?></span>
                 <option value="CIU">CIU</option>
                 <option value="LSO">LSO</option>
                 <option value="PAU">PAU</option>
+                <option value="PG3">PG3</option>
+                <option value="PPBU">PPBU</option>
                 <option value="Baguio">RSU-Baguio</option>
                 <option value="Batangas">RSU-Batangas</option>
                 <option value="Bicol">RSU-Bicol</option>
@@ -227,6 +229,7 @@ unset($__errorArgs, $__bag); ?></span>
                 <option value="Palawan">RSU-Palawan</option>
                 <option value="Tarlac">RSU-Tarlac</option>
                 <option value="Zamboanga">RSU-Zamboanga</option>
+                <option value="TFD">Task Force Differential</option>
             </select>
           <span class="text-danger" style="color:red"><?php $__errorArgs = ['unit_to_receive'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

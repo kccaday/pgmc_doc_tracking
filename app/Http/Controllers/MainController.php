@@ -116,7 +116,7 @@ class MainController extends Controller
             'created_by'=>$request->input('created_by'),
             'last_updated_by'=>$request->input('created_by'),
             'unit'=>$request->input('unit'),
-            'created_at'=>now()
+            'updated_at'=>now()
         ]);
 
         $queryDtl = DB::table('pgmc_details_tbl')->insert([
@@ -191,8 +191,7 @@ class MainController extends Controller
             'created_by'=>$request->input('last_updated_by'),
             'last_updated_by'=>$request->input('last_updated_by'),
             'unit'=>$request->input('unit'),
-            'updated_at'=>now(),
-            'created_at'=>now()
+            'updated_at'=>now()
         ]); 
 
         $query_update = DB::table('pgmc_main_tbl')->where('afpsn', $id)

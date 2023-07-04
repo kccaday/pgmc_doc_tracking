@@ -17,6 +17,8 @@ Route::view('/result', 'result');
 Route::view('/menu', 'menu');
 Route::view('/textsearch', 'textsearch');
 Route::view('/selection', 'selection');
+Route::view('/textblast', 'textblast');
+
 
 //Route::view('/textresult', 'textresult');
 //Route::get('/textresult', [TextResultController::class, 'index']);
@@ -56,3 +58,11 @@ Route::group(['middleware'=>['AuthCheck']], function(){
     Route::get('/admin/dashboard/edit/{id}', [MainController::class, 'edit'])->name('admin.edit');
     Route::view('/admin/success', 'success');
 });
+
+//routes for online updating
+Route::view('/updating', 'updating');
+Route::view('/viewupdate', 'viewupdate');
+Route::view('/pensiondetails', 'pensiondetails');
+
+Route::post('/updating', [MainController::class, 'insertUpdating'])->name('pgmc.updating');
+Route::get('/viewupdate',[MainController::class, 'viewupdatelist'])->name('pgmc.viewupdate');

@@ -237,4 +237,76 @@ class MainController extends Controller
         //return View::make('admin.edit')>with('data', $data);
         }
 
+        function textblast(){
+            return view('textblast');
+        }
+
+        function updating(){
+            return view('updating');
+        }
+
+        function viewupdate(){
+            return view('viewupdate');
+        }
+
+        function pensiondetails(){
+            return view('pensiondetails');
+        }
+
+        function insertUpdating(Request $request){
+        // Validate the request data
+        $request->validate([
+            'pensioner_type'=>'required',
+            'pensioner_loc'=>'required',
+            'pensioner_afpsn'=>'required',
+            'pensioner_first_name'=>'required',
+            'pensioner_last_name'=>'required',
+            'pensioner_age'=>'required',
+            'pensioner_dob'=>'required',
+            'pensioner_home_address'=>'required',
+            'pensioner_contact_no'=>'required',
+            'pensioner_helpline_code'=>'required',
+            'pensioner_pgmc_ref_code'=>'required',
+            //'pensioner_proof' => 'required|mimetypes:video/avi,video/mp4|max:204800',
+        ]);
+
+        
+        $query = DB::table('pgmc_updating_users_tbl')->insert([
+            'pensioner_type'=>$request->input('pensioner_type'),
+            'pensioner_loc'=>$request->input('pensioner_loc'),
+            'pensioner_afpsn'=>$request->input('pensioner_afpsn'),
+            'pensioner_first_name'=>$request->input('pensioner_first_name'),
+            'pensioner_last_name'=>$request->input('pensioner_last_name'),
+            'pensioner_middle_initial'=>$request->input('pensioner_middle_initial'),
+            'pensioner_age'=>$request->input('pensioner_age'),
+            'pensioner_dob'=>$request->input('pensioner_dob'),
+            'pensioner_home_address'=>$request->input('pensioner_home_address'),
+            'pensioner_contact_no'=>$request->input('pensioner_contact_no'),
+            'pensioner_helpline_code'=>$request->input('pensioner_helpline_code'),
+            'pensioner_pgmc_ref_code'=>$request->input('pensioner_pgmc_ref_code'),
+           // 'pensioner_proof'=> $request->file->input('pensioner_proof'),
+           'isUpdated'=>'NO',
+            'creation_date'=>now()
+        ]);
+        
+        if($query){
+            
+            return back()->with('success', 'Data have been successfully created');
+        }else{
+            return back()->with('fail', 'Something went wrong');
+        }
+        //dd($query);
+        }
+
+        function viewupdatelist(Request $request){
+            $id = $request->afpsn;
+            $details = DB::table('pgmc_updating_users_tbl')->orderBy('created_at','desc')->get();
+            //dd($details);
+            
+            return view('/viewupdate')->with('viewupdatelist', $details);
+        }
+
+        function show($id){
+
+        }
 }

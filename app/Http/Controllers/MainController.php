@@ -249,8 +249,12 @@ class MainController extends Controller
             return view('viewupdate');
         }
 
-        function pensiondetails(){
-            return view('pensiondetails');
+        function editpensiondetails($afpsn){
+            $result = DB::table('pgmc_updating_users_tbl')->where('pensioner_afpsn',$afpsn)->first();
+            //dd($details);
+            
+            return view('pensiondetails')->with('result', $result);
+
         }
 
         function insertUpdating(Request $request){
@@ -267,6 +271,10 @@ class MainController extends Controller
             'pensioner_contact_no'=>'required',
             'pensioner_helpline_code'=>'required',
             'pensioner_pgmc_ref_code'=>'required',
+            'pensioner_afpid'=>'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'pensioner_afpidnr'=>'required',
+            'pensioner_retor'=>'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'pensioner_order'=>'required',
             //'pensioner_proof' => 'required|mimetypes:video/avi,video/mp4|max:204800',
         ]);
 
@@ -284,18 +292,21 @@ class MainController extends Controller
             'pensioner_contact_no'=>$request->input('pensioner_contact_no'),
             'pensioner_helpline_code'=>$request->input('pensioner_helpline_code'),
             'pensioner_pgmc_ref_code'=>$request->input('pensioner_pgmc_ref_code'),
-           // 'pensioner_proof'=> $request->file->input('pensioner_proof'),
-           'isUpdated'=>'NO',
+            'pensioner_afpid'=>$request->input('pensioner_afpid'),
+            'pensioner_afpidnr'=>$request->input('pensioner_afpidnr'),
+            'pensioner_retor'=>$request->input('pensioner_retor'),
+            'pensioner_order'=>$request->input('pensioner_order'),
+            'isUpdated'=>'NO',
             'creation_date'=>now()
         ]);
         
-        if($query){
+        /*if($query){
             
             return back()->with('success', 'Data have been successfully created');
         }else{
             return back()->with('fail', 'Something went wrong');
-        }
-        //dd($query);
+        }*/
+        dd($request);
         }
 
         function viewupdatelist(Request $request){
@@ -304,6 +315,7 @@ class MainController extends Controller
             //dd($details);
             
             return view('/viewupdate')->with('viewupdatelist', $details);
+            
         }
 
         function show($id){

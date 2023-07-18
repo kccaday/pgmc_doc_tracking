@@ -143,6 +143,22 @@ unset($__errorArgs, $__bag); ?></span>
                 <label class="font-semibold text-sm text-gray-600">Middle Initial</label>
                 <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" name="pensioner_middle_initial" placeholder="Enter Middle Initial" value="<?php echo e(old('pensioner_middle_initial')); ?>" required/>
 
+                <label for="unit_to_receive" class="font-semibold text-sm text-gray-600">Gender</label>
+          <br>
+          <span class="text-danger" style="color:red"><?php $__errorArgs = ['pensioner_gender'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><?php echo e($message); ?> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?></span>
+          <select class="browser-default" placeholder="pensioner_gender" id="pensioner_gender" name="pensioner_gender" class="validate" value="<?php echo e(old('pensioner_gender')); ?>"required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="principal">M</option>
+                <option value="bene">F</option>
+            </select>
+<br>
                 <span class="text-danger"><?php $__errorArgs = ['pensioner_age'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -209,6 +225,44 @@ unset($__errorArgs, $__bag); ?></span>
 </div>
 <br>
 
+<br>
+<div>
+    <div class="bg-white shadow w-full rounded-lg divide-y divide-gray-25">
+    <p class="font-bold text-center mb-10">Attachments Required</p>  
+        <div class="px-5 py-7">
+            <div>
+                
+                <label class="font-semibold text-sm text-gray-600">AFP ID</label>
+                <input type="file" name="pensioner_afpid" class="form-control" id="pensioner_afpid">
+               
+                <span class="text-danger"><?php $__errorArgs = ['pensioner_afpidnr'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><?php echo e($message); ?> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?></span>
+                <label class="font-semibold text-sm text-gray-600">ID NUMBER</label>
+                <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" name="pensioner_afpidnr" placeholder="Enter Pensioner ID Number" value="<?php echo e(old('pensioner_afpidnr')); ?>"/>
+            
+                <label class="font-semibold text-sm text-gray-600">Retirement Order</label>
+                <input type="file" name="pensioner_retor" class="form-control" id="pensioner_retor">
+
+                <span class="text-danger"><?php $__errorArgs = ['pensioner_order'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?><?php echo e($message); ?> <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?></span>
+                <label class="font-semibold text-sm text-gray-600">GO/SO Number</label>
+                <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" name="pensioner_order" placeholder="Enter Pensioner Order Number" value="<?php echo e(old('pensioner_order')); ?>"/>
+            </div>
+    </div>
+</div>
+<br>
 <br>
 <div>
     <div class="bg-white shadow w-full rounded-lg divide-y divide-gray-25">

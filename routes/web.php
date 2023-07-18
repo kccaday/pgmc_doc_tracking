@@ -66,3 +66,4 @@ Route::view('/pensiondetails', 'pensiondetails');
 
 Route::post('/updating', [MainController::class, 'insertUpdating'])->name('pgmc.updating');
 Route::get('/viewupdate',[MainController::class, 'viewupdatelist'])->name('pgmc.viewupdate');
+Route::get('/pensiondetails/edit/{id}', [MainController::class, 'editpensiondetails'])->name('pgmc.pensiondetails');

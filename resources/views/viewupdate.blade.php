@@ -41,7 +41,7 @@
           <td>{{ $dtl->pensioner_helpline_code }}</td>
           <td>{{ $dtl->pensioner_dob }}</td>
           <td>{{ $dtl->creation_date }}</td>
-          <td><a class="mr-5 hover:text-gray-900" href="/pensiondetails">UPDATE</a></td>
+          <td><a class="mr-5 hover:text-gray-900" href="{{ url('/pensiondetails/edit', $dtl->pensioner_afpsn) }}">UPDATE</a></td>
           </tr>
         </tbody>
         @endforeach

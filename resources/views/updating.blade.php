@@ -42,8 +42,8 @@
           <span class="text-danger" style="color:red">@error('pensioner_type'){{ $message }} @enderror</span>
           <select class="browser-default" placeholder="pensioner_type" id="pensioner_type" name="pensioner_type" class="validate" value="{{ old('pensioner_type') }}" required>
                 <option value="" disabled selected>Select Type</option>
-                <option value="principal">Principal</option>
-                <option value="bene">Beneficiary</option>
+                <option value="Principal">Principal</option>
+                <option value="Beneficiary">Beneficiary</option>
             </select>
             <br>
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -71,8 +71,8 @@
           <span class="text-danger" style="color:red">@error('pensioner_loc'){{ $message }} @enderror</span>
           <select class="browser-default" placeholder="pensioner_loc" id="pensioner_loc" name="pensioner_loc" class="validate" value="{{ old('pensioner_loc') }}"required>
                 <option value="" disabled selected>Select Type</option>
-                <option value="principal">Local</option>
-                <option value="bene">Abroad</option>
+                <option value="Local">Local</option>
+                <option value="Abroad">Abroad</option>
             </select>
             <br>
             <br>
@@ -94,6 +94,15 @@
                 <label class="font-semibold text-sm text-gray-600">Middle Initial</label>
                 <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" name="pensioner_middle_initial" placeholder="Enter Middle Initial" value="{{ old('pensioner_middle_initial') }}" required/>
 
+                <label for="unit_to_receive" class="font-semibold text-sm text-gray-600">Gender</label>
+          <br>
+          <span class="text-danger" style="color:red">@error('pensioner_gender'){{ $message }} @enderror</span>
+          <select class="browser-default" placeholder="pensioner_gender" id="pensioner_gender" name="pensioner_gender" class="validate" value="{{ old('pensioner_gender') }}"required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="principal">M</option>
+                <option value="bene">F</option>
+            </select>
+<br>
                 <span class="text-danger">@error('pensioner_age'){{ $message }} @enderror</span>
                 <label class="font-semibold text-sm text-gray-600">Age</label>
                 <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" name="pensioner_age" placeholder="Enter Age" value="{{ old('pensioner_age') }}" required/>
@@ -125,6 +134,30 @@
 </div>
 <br>
 
+<br>
+<div>
+    <div class="bg-white shadow w-full rounded-lg divide-y divide-gray-25">
+    <p class="font-bold text-center mb-10">Attachments Required</p>  
+        <div class="px-5 py-7">
+            <div>
+                
+                <label class="font-semibold text-sm text-gray-600">AFP ID</label>
+                <input type="file" name="pensioner_afpid" class="form-control" id="pensioner_afpid">
+               
+                <span class="text-danger">@error('pensioner_afpidnr'){{ $message }} @enderror</span>
+                <label class="font-semibold text-sm text-gray-600">ID NUMBER</label>
+                <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" name="pensioner_afpidnr" placeholder="Enter Pensioner ID Number" value="{{ old('pensioner_afpidnr') }}"/>
+            
+                <label class="font-semibold text-sm text-gray-600">Retirement Order</label>
+                <input type="file" name="pensioner_retor" class="form-control" id="pensioner_retor">
+
+                <span class="text-danger">@error('pensioner_order'){{ $message }} @enderror</span>
+                <label class="font-semibold text-sm text-gray-600">GO/SO Number</label>
+                <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" name="pensioner_order" placeholder="Enter Pensioner Order Number" value="{{ old('pensioner_order') }}"/>
+            </div>
+    </div>
+</div>
+<br>
 <br>
 <div>
     <div class="bg-white shadow w-full rounded-lg divide-y divide-gray-25">

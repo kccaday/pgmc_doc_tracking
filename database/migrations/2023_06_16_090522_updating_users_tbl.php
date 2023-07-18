@@ -29,7 +29,11 @@ class UpdatingUsersTbl extends Migration
             $table->text('pensioner_helpline_code');
             $table->text('pensioner_pgmc_ref_code');
             $table->text('creation_date');
-           // $table->string('pensioner_proof');
+            $table->string('pensioner_proof')->nullable();
+            $table->string('pensioner_afpid')->nullable();
+            $table->string('pensioner_afpidnr')->nullable();
+            $table->string('pensioner_retor')->nullable();
+            $table->string('pensioner_order')->nullable();
             $table->text('isUpdated');
             $table->timestamps();
         });

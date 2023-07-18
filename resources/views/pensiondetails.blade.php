@@ -16,114 +16,54 @@
 <div class="p-10 xs:p-0 mx-auto md:w-full">
 <p class="font-bold text-center  mb-5">AFP Pensioner's Living Status Updating Form</p>  
 <div class="bg-white shadow w-full rounded-lg divide-y divide-gray-25">
-<p class="font-bold text-center  mb-5">AFP Pensioner's Profile</p>  
+<p class="font-bold text-center  mb-5">Pensioner's Details</p>  
+<div class="px-5 py-7">
+        <label for="pensioner_type" class="font-semibold text-sm text-gray-600">Type of Pensioner:</label>
+        <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" id="pensioner_type" name="pensioner_type" value="{{ $result->pensioner_type }}" disabled>
+        <br>
+        <label for="pensioner_loc" class="font-semibold text-sm text-gray-600">Location of Pensioner:</label>
+        <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" id="pensioner_loc" name="pensioner_loc" value="{{ $result->pensioner_loc }}" disabled>
+        <br>
+        <label for="pensioner_afpsn" class="font-semibold text-sm text-gray-600">Serial Number:</label>
+        <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" id="pensioner_afpsn" name="pensioner_afpsn" value="{{ $result->pensioner_afpsn }}" disabled>
+        <br>
+        <label for="pensioner_first_name" class="font-semibold text-sm text-gray-600">First Name:</label>
+        <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" id="pensioner_first_name" name="pensioner_first_name" value="{{ $result->pensioner_first_name }}" disabled>
+        <br>
+        <label for="pensioner_last_name" class="font-semibold text-sm text-gray-600">Last Name:</label>
+        <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" id="pensioner_last_name" name="pensioner_last_name" value="{{ $result->pensioner_last_name }}" disabled>
+        <br>
+        <label for="pensioner_age" class="font-semibold text-sm text-gray-600">Age:</label>
+        <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" id="pensioner_age" name="pensioner_age" value="{{ $result->pensioner_age }}" disabled>
+        <br>
+        <label for="pensioner_dob" class="font-semibold text-sm text-gray-600">Date Of Birth:</label>
+        <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" id="pensioner_dob" name="pensioner_dob" value="{{ $result->pensioner_dob }}" disabled>
+        <br>
+        <label for="pensioner_home_address" class="font-semibold text-sm text-gray-600">Home Address:</label>
+        <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" id="pensioner_home_address" name="pensioner_home_address" value="{{ $result->pensioner_home_address }}" disabled>
+        <br>
+        <label for="pensioner_contact_no" class="font-semibold text-sm text-gray-600">Contact Number:</label>
+        <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" id="pensioner_contact_no" name="pensioner_contact_no" value="{{ $result->pensioner_age }}" disabled>
+        <br>
+       
+</div>
 <div class="bg-white shadow w-full rounded-lg divide-y divide-gray-25">
-<p class="font-bold text-center mb-10">Pensioner's Details</p>  
+<p class="font-bold text-center mb-10">Attachments Required</p>  
     <div class="px-5 py-7">
-        <form action="{{ route('auth.check') }}" method="post">
-            @if(Session::get('fail'))
-                <div class="alert alert-danger">
-                    {{ Session::get('fail') }}
-                </div>
-            @endif
-            @csrf
-            <div><div class="input-field col s6">
-          <label for="unit_to_receive" class="font-semibold text-sm text-gray-600">Type of Pensioner</label>
-          <br>
-          <select class="browser-default" placeholder="typeofpensioner" id="typeofpensioner" name="typeofpensioner" class="validate" required>
-                <option value="" disabled selected>Select Type</option>
-                <option value="principal">Principal</option>
-                <option value="bene">Beneficiary</option>
-            </select>
-            <br>
-            <br>
-          <span class="text-danger" style="color:red">@error('unit_to_receive'){{ $message }} @enderror</span>
-                <span class="text-danger">@error('name'){{ $message }} @enderror</span>
-                <label class="font-semibold text-sm text-gray-600">Name: </label>
-                <label class="font-semibold text-sm text-gray-600">Karl Andrie Caday</label>
-
-                <br>
-
-                <span class="text-danger">@error('age'){{ $message }} @enderror</span>
-                <label class="font-semibold text-sm text-gray-600">Age: </label>
-                <label class="font-semibold text-sm text-gray-600">29</label>
-
-                <br>
-
-                <span class="text-danger">@error('dob'){{ $message }} @enderror</span>
-                <label class="font-semibold text-sm text-gray-600">Date of Birth: </label>
-                <label class="font-semibold text-sm text-gray-600">11-JAN-1994</label>
-
-                <br>
-
-                <span class="text-danger">@error('snr'){{ $message }} @enderror</span>
-                <label class="font-semibold text-sm text-gray-600">Serial Number: </label>
-                <label class="font-semibold text-sm text-gray-600">12345</label>
-
-                <br>
-
-                <span class="text-danger">@error('addr'){{ $message }} @enderror</span>
-                <label class="font-semibold text-sm text-gray-600">Home Address: </label>
-                <label class="font-semibold text-sm text-gray-600">L62 B8 Cura Lane NIA Village Brgy Sauyo QC</label>
-
-                <br>
-
-                <span class="text-danger">@error('mpbile_no'){{ $message }} @enderror</span>
-                <label class="font-semibold text-sm text-gray-600">Mobile Number: </label>
-                <label class="font-semibold text-sm text-gray-600">09983309556</label>
-
-                <br>
-                
-                <span class="text-danger">@error('source'){{ $message }} @enderror</span>
-                <label class="font-semibold text-sm text-gray-600">Source of Commission/Enlistment: </label>
-                <label class="font-semibold text-sm text-gray-600">OC</label>
-
-                <br>
-
-            </div>
+    <div>
+    <label for="pensioner_afpid" class="font-semibold text-sm text-gray-600">Pensioner AFP ID:</label>
+        <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" id="pensioner_afpid" name="pensioner_afpid" value="{{ $result->pensioner_afpid }}" disabled>
+        <br>
+        <label for="pensioner_afpidnr" class="font-semibold text-sm text-gray-600">ID Number:</label>
+        <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" id="pensioner_afpidnr" name="pensioner_afpidnr" value="{{ $result->pensioner_afpidnr }}" disabled>
+        <br>
+        <label for="pensioner_retor" class="font-semibold text-sm text-gray-600">Retirement Order:</label>
+        <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" id="pensioner_retor" name="pensioner_retor" value="{{ $result->pensioner_retor }}" disabled>
+        <br>
+        <label for="pensioner_order" class="font-semibold text-sm text-gray-600">GO/SO Number:</label>
+        <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" id="pensioner_order" name="pensioner_order" value="{{ $result->pensioner_order }}" disabled>
+        <br>
         </div>
-    </div>
-</div>
-<br>
-
-<br>
-<div>
-    <div class="bg-white shadow w-full rounded-lg divide-y divide-gray-25">
-    <p class="font-bold text-center mb-10">PSA Certificate</p>  
-        <div class="px-5 py-7">
-            <div>
-                
-            <label class="font-semibold text-sm text-gray-600">CRS Form Nr 5: </label>
-            <label class="font-semibold text-sm text-gray-600">https://e-cert.psahelpline.ph/viewing/249</label>
-
-<br>   
-                </div>
-                    
-                <span class="text-danger">@error('mpbile_no'){{ $message }} @enderror</span>
-                <label class="font-semibold text-sm text-gray-600">Helpline Reference Code: </label>
-                <label class="font-semibold text-sm text-gray-600">2372605484</label>
-                </div>
-    </div>
-</div>
-<br>
-<br>
-<div>
-    <div class="bg-white shadow w-full rounded-lg divide-y divide-gray-25">
-    <p class="font-bold text-center mb-10">Proof of Life</p>  
-        <div class="px-5 py-7">
-            <div> 
-            <label class="font-semibold text-sm text-gray-600">Video Clip state your: Name, Date Today while holding calendar</label>
-                <input type="text" class="border rounded-lg px-3 py-2 mt-1 text-sm w-full" name="mobile_no" placeholder="Sample Video Clip.3gp" disabled/>
-                </div>
-                <span class="text-danger">@error('refno'){{ $message }} @enderror</span>
-                <label class="font-semibold text-sm text-gray-600">AFP PGMC Ref No</label>
-                <label class="font-semibold text-sm text-gray-600">54321</label>
-                </div>
-            <button type="submit" class="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
-        <span class="inline-block mr-2">Update</span>
-    </div>
-</div>
-</div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script>  document.addEventListener('DOMContentLoaded', function() {

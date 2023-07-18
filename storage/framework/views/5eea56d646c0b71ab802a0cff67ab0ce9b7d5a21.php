@@ -14,46 +14,51 @@
 </head>
 <body>
 
-
 <nav class=”blue”>
     <div class="nav-wrapper" >
-    <a href="<?php echo e(route('admin.search')); ?>" class="brand-logo">PGMC Online Updating Validation</a>
+    <a href="<?php echo e(route('admin.search')); ?>" class="brand-logo">PGMC Document Tracking</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="<?php echo e(route('admin.search')); ?>">Back</a></li>
       </ul>
     </div>
   </nav>
+  <form action="" method="get">
   <table>
         <thead>
           <tr>
               <th>AFP Serial Num</th>
-              <th>FIRST NAME</th>
-              <th>LAST NAME</th>
-              <th>AFPPGMC Ref No</th>
-              <th>PSA Helpline Ref No</th>
-              <th>BIRTHDATE</th>
-              <th>Creation Date</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Transaction Type</th>
+              <th>Date Updated</th>
+              <th>Document Owner</th>
+              <th>Last Updated By</th>
+              <th>Last Updated By Unit</th>
+              <th>Remarks</th>
           </tr>
         </thead>
-        <?php echo csrf_field(); ?>
-        <?php $__currentLoopData = $viewupdatelist; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dtl): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
+        <?php echo Form::open(['method' => 'GET', 'route' => ['admin.update']]); ?>
+
+        <?php $__currentLoopData = $dashboard; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dash): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>     
         <tbody>
           <tr>
-          <td><?php echo e($dtl->pensioner_afpsn); ?></td>
-          <td><?php echo e($dtl->pensioner_first_name); ?></td>
-          <td><?php echo e($dtl->pensioner_last_name); ?></td>
-          <td><?php echo e($dtl->pensioner_pgmc_ref_code); ?></td>
-          <td><?php echo e($dtl->pensioner_helpline_code); ?></td>
-          <td><?php echo e($dtl->pensioner_dob); ?></td>
-          <td><?php echo e($dtl->creation_date); ?></td>
-          <td><a class="mr-5 hover:text-gray-900" href="<?php echo e(url('/pensiondetails/edit', $dtl->pensioner_afpsn)); ?>">UPDATE</a></td>
+          <td id="afpsn"><?php echo e($dash->afpsn); ?></td>
+          <td><?php echo e($dash->first_name); ?></td>
+          <td><?php echo e($dash->last_name); ?></td>
+          <td><?php echo e($dash->transaction_type); ?></td>
+          <td><?php echo e($dash->updated_at); ?></td>
+          <td><?php echo e($dash->unit_to_receive); ?></td>
+          <td><?php echo e($dash->created_by); ?></td>
+          <td><?php echo e($dash->unit); ?></td>
+          <td><?php echo e($dash->remarks); ?></td>
+          <td><button class="btn waves-effect waves-light" type="submit" name="action"><a href="<?php echo e(url('admin/dashboard/edit', $dash->afpsn)); ?>" > Update </a></button></td>
           </tr>
         </tbody>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
       </table>
-      
-</form>
+      <?php echo Form::close(); ?>
 
+</form>
 
 </body>
 </html>
@@ -64,4 +69,4 @@
 <?php unset($__componentOriginal8e2ce59650f81721f93fef32250174d77c3531da); ?>
 <?php endif; ?>
 
-<?php /**PATH C:\xampp\htdocs\pgmc_doc_tracking-1\resources\views//viewupdate.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\xampp\htdocs\pgmc_doc_tracking-1\resources\views/admin/dashboard.blade.php ENDPATH**/ ?>
